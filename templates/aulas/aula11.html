@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX011</title>
+</head>
+<body>
+    <p><a href="/aulas" target="_self" rel="prev">Voltar</a></p>
+    <h1>Mídias em HTML5</h1>
+    <p>Tente abrir esse site em vários dispositivos diferente ou simplesmente aumente e diminua o tamanho do seu navegador</p>
+
+    <picture> <!--a tag picture indica que eu vou trabalhar com alguma imagem-->
+        <source media="(max-width: 750px)" srcset="../../static/img/foto-p.png" type="image/png"> <!--max width é a largura maxima,ou seja se a largura maxima for menor que 750pixel, carregue a imagem 'p' -->
+        <source media="(max-width: 1050px)" srcset="../../static/img/foto-m.png" type="image/png"> <!--aq é a mesma coisa, se a imagem for menor que 1050 pixels, carregue a imagem 'm'-->
+        <img src="../../static/img/foto-g.png" alt="Imagem flexivel"> <!--se a largura maxima for maior que 1050 pixels, vai carregar a imagen 'g' dboas-->
+    </picture>
+    <!--Obs: é essencial e obrigatório trabalhar com a sequencia de pixels certa, como acima trabalhei do menor pixel para o maior-->
+
+    <h1>Reproduzindo Áudio</h1>
+    <p>Vamos aprender a reproduzir áudios em HTML5.</p>
+    <!--Primeira maneira-->
+    <audio src="../../static/midia/happy-mistake.mp3" controls ></audio>
+    <!--MP3 WAV OGG-->
+    
+    <audio>
+        <source src="../../static/midia/happy-mistake.mp3" type="audio/mpeg">
+        <!--Se quiser pode adicionar em outros formatos tbm-->
+        <source src="../../static/midia/guanacast-33.ogg " type="audio/ogg"> 
+        <source src="../../static/midia/guanacast-33.wav" type="audio/wav">
+        <!--se não conseguir carregar nenhum desses formatos vou enviar uma mensagem ao user-->
+        <p>Infelizmente seu navegador não consegue reproduzir áudio. <br>Clique aqui para <a href="../../static/midia/guanacast-33.mp3" download="audio.mp3" >baixar o arquivo MP3</a> </p>
+    </audio>
+
+</body>
+</html>

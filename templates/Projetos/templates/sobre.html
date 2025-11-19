@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre</title>
+    <link rel="stylesheet" href="../static/css/sobre.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <div id="logo">
+                <a href="#">DOG</a>
+            </div>
+            <div class="search-bar">
+                <ul id="nav-links">
+                    <li><a href="/dogpage">Home</a></li>
+                    <li><a href="#">Sobre</a></li>
+                </ul>
+            </div>
+        </header>
+        
+        <div class="corpo">
+            <div id="imagem-central">
+                <img src="../static/img/200px.png" alt="img do header">
+            </div>
+        
+            <main id="text">
+                <h1>Sobre mim</h1>
+                <p>Meu nome é Lenildo Júnior, sou estudante de ADS(Análise e Desenvolvimento de Sistemas) e SI(Segurânça da Informação). Estou desenvolvendo minhas habilidades cada vez mais,com cursos e estudos pessoais. <br>
+                Estou a caminho de entrar em uma faculdade no curso de ADS para que eu possa aprimorar tudo pelo qual já venho estudando e praticando. </p>
+                <!--Preciso entender como este funciona-->
+                <a href="#modal-telefone" class="telefone-link">Telefone</a> <!--é o gatilho: quando alguém clica nesse link, o navegador muda a “âncora” (fragment) da URL para #modal-telefone-->
+                    <div id="modal-telefone" class="modal"> <!--é o modal escondido. Ele possui esse id que casa com o href do link.-->
+                        <div class="modal-content">
+                        <a href="#" class="close-button">&times;</a>
+                        <p>Meu número:+55 (83) 994153667</p> <!--é o conteúdo visível quando o modal estiver ativo, e um link para fechar, <a href="#" …> — esse link geralmente leva de volta para a URL sem fragmento (ou seja, “desativa” o modal).-->
+                        </div>
+                    </div>
+            
+            </main>
+        </div>
+        <footer>
+            <div class="elementos"><a href="https://www.instagram.com/ljblues_/" target="_blank" rel="external noopener norefere nofollow">
+                <img src="https://i.pinimg.com/originals/ff/5a/e7/ff5ae72f423c7a1a2e6daf347ff1b5e2.jpg" alt="logo-insta"><p>Instagram</p></a></div>
+            <div class="elementos"><a href="https://web.whatsapp.com/" target="_blank" rel="external noopener norefere nofollow">
+                <img src="https://i.pinimg.com/736x/d9/d9/7d/d9d97d48264770f85d35c208f279152c.jpg" alt="logo-zap"><p>WhatsApp</p></a></div>
+            <div class="elementos"><a href="https://mail.google.com/mail/u/0/?ogbl#search/rosalenildo833%40gmail.com" target="_blank" rel="external noopener norefere nofollow">
+                <img src="https://e7.pngegg.com/pngimages/882/143/png-clipart-angle-text-brand-gmail-gmail-icon-illustration-angle-text-thumbnail.png" alt="logo-email"><p>E-mail</p></a></div>
+            <div class="elementos"><a href="#modal-telefone" target="_self" rel="next">
+                <img src="https://images.vexels.com/media/users/3/205069/isolated/preview/f207045d96c258fed664305f0ac2c5bd-icone-azul-do-monofone-do-telefone.png" alt="logo-telefone"><p>Telefone</p></a></div>
+        </footer>
+    
+    
+
+    
+</body>
+</html>

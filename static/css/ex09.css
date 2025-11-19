@@ -1,0 +1,19 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+picture{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+}
+a{
+    color: white;
+}
