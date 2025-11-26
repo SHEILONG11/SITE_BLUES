@@ -108,5 +108,6 @@ header{
 }
 #header a:hover{
     font-size: 14px;
+    text-decoration: underline;
 }
 

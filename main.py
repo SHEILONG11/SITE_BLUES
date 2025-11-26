@@ -80,7 +80,7 @@ def processar():
 def inserir_cliente(connection,nome,email,telefone,sexo,idade): #AQUI ENTRA NOSSAS VARIAVEIS COMECANDO COM A CONEXAO
     try:
         cursor = connection.cursor()
-        query = "INSERT INTO clientes (nome, email, telefone, sexo, idade) VALUES (%s, %s, %s, %s, %s)" #A %s SERVE PARA CADA VALORES DAS VARIAVEIS QUE ESTOU CRIANDO NA TABELA clientes
+        query = "INSERT INTO clientes (Nome, Email, Telefone, Sexo, Idade) VALUES (%s, %s, %s, %s, %s)" #A %s SERVE PARA CADA VALORES DAS VARIAVEIS QUE ESTOU CRIANDO NA TABELA clientes
         values = (nome, email, telefone, sexo, idade)
         cursor.execute(query, values)
         connection.commit()
@@ -94,6 +94,7 @@ def inserir_cliente(connection,nome,email,telefone,sexo,idade): #AQUI ENTRA NOSS
     
     
 @app.route('/visualizar')          
+#PRIMEIRO MODO DE MOSTRAR OS CLIENTES
 def visualizar():
     # Conecta ao banco
     config = {
@@ -120,12 +121,88 @@ def visualizar():
 
     # Passa os dados para o template
     return render_template('dados.html', dados=[colunas] + dados)
-    
-@app.route('/editar')
-def editar():
-    return render_template("editar.html")
-    
 
+
+#CRUD DE MARIA
+#READ
+#SEGUNDO MODO DE MOSTRAR OS CLIENTES
+def imprimir_clientes(connection):
+    try:
+        cursor = connection.cursor()
+        query = 'SELECT * FROM clientes'
+        cursor.execute(query)
+        clientes = cursor.fetchall()
+
+        if clientes:
+            print("======MEUS CLIENTES======")
+            for cliente in clientes:
+                print("ID",cliente[0])
+                print("Nome",cliente[1])
+                print("Email",cliente[2])
+                print("Telefone",cliente[3])
+                print("Sexo",cliente[4])
+                print("Idade",cliente[5])
+                print("\n")
+
+    except Error as e:
+        print(f"Erro ao encontrar cliente: {e}")
+        connection.rollback()
+        return None
+   
+#UPDATE
+@app.route('/editar')
+def editar_cliente(connection, id, novo_nome=None, novo_email=None, novo_telefone=None, novo_sexo=None, novo_idade=None):
+    try:
+        cursor = connection.cursor()
+        query = "SELECT * FROM clientes WHERE id_cliente = %s"
+        cursor.execute(query, (id,))
+        cliente = cursor.fetchone()
+        print(cliente)
+
+        variaveis = []
+        valores = []
+
+        if novo_nome is not None: # SE EU TIVER INSERIDO UM NOME
+            variaveis.append('nome = %s')
+            valores.append(novo_nome)
+        if novo_email is not None:
+            variaveis.append('email = %s')
+            valores.append(novo_email)
+        if novo_telefone is not None:
+            variaveis.append('telefone = %s')
+            valores.append(novo_telefone)
+        if novo_sexo is not None:
+            variaveis.append('sexo = %s')
+            valores.append(novo_sexo)
+        if novo_idade is not None:
+            variaveis.append('idade = %s')
+            valores.append(novo_idade)
+
+        valores.append(id)
+        query = f"UPDATE clientes SET {', '.join(variaveis)} WHERE id_cliente = %s"
+        cursor.execute(query, valores)
+        connection.commit()
+
+    except Error as e:
+        print(f"Erro ao encontrar cliente {e}")
+        connection.rollback()
+        return None
+
+#DELETE
+@app.route("/deletar")
+def deletar_cliente(connection, id):
+    try:
+        cursor = connection.cursor()
+        query = "SELECT * FROM cliente WHERE id_cliente = %s"
+        cursor.execute(query)
+        cliente = cursor.fetchone()
+    
+    except Error as e:
+        print(f"Erro ao encontrar cliente: {e}")
+        connection.rollback()
+        return None
+    
+    
 #REPOSITORIOS
 @app.route('/modulo01')
 def modulo01():

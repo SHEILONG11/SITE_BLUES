@@ -30,7 +30,9 @@ body{
 
 main{
     height: 100%;
+    font-size: 18px;
 }
+
 
 #text{
     display: flex;
@@ -150,6 +152,14 @@ footer p{
   margin: auto;
 }
 
+.modal .modal-content a{
+    text-decoration: none;
+    font-size: 18px;
+    color: darkorange;
+}
+.modal .modal-content a:hover{
+    text-decoration: underline;
+}
 /* Quando o modal for o alvo (target) do link */
 .modal:target {
   display: flex; /* mostra */

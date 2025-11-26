@@ -88,7 +88,14 @@ a{
   max-width: 300px;
   margin: auto;
 }
-
+.modal .modal-content a{
+    color: darkorange;
+    font-size: 18px;
+    text-decoration: none;
+}
+.modal .modal-content a:hover{
+    text-decoration: underline;
+}
 /* Quando o modal for o alvo (target) do link */
 .modal:target {
   display: flex; /* mostra */
