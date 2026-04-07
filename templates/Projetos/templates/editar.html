@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Registro</title>
+</head>
+<body>
+    <h1>Editar Registro</h1>
+    <form action="{{ url_for('editar_registro', index=index) }}" method="post">
+        {% for j, col in enumerate(header) %}
+        <label>{{ col }}:</label>
+        <input type="text" name="{{ col }}" value="{{ linha[j] }}"><br>
+        {% endfor %}
+        <button type="submit">Salvar</button>
+    </form>
+    <p><a href="{{ url_for('/visualizar') }}">Voltar</a></p>
+</body>
+</html>
