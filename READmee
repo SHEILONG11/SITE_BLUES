@@ -1,0 +1,6 @@
+Se lembra de criar a env com os dados do dbs, pois o arquivo gitignore esta ocultando a env no github
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_NAME="lojadb"
+DB_USER=root
+DB_PASSWORD=""
