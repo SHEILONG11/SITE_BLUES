@@ -8,7 +8,7 @@ CREATE TABLE clientes (
     email VARCHAR(100) UNIQUE NOT NULL,
 	telefone VARCHAR(20) NOT NULL,
     sexo VARCHAR(10) NOT NULL,
-    idade INT GENERATED ALWAYS AS (TIMESTAMPDIFF(YEAR, data_nascimento, CURDATE())) VIRTUAL
+    idade DATE NOT NULL
 );
 
 CREATE TABLE produtos (
