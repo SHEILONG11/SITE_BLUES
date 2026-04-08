@@ -1,0 +1,123 @@
+body{
+    background-image: url("../img/dark_background.jpeg");
+    margin: 0;
+}
+
+.navbar{
+    background-color: rgb(3, 3, 3);
+    display: flex;
+    align-items: center;
+    height: 70px;    
+}
+
+.logo{
+    width: 10%; /*LARGURA*/
+    font-weight: 800; /*NEGRITO*/
+    color: white; /*COR*/
+    background-color: aquamarine; /*COR DE FUNDO*/
+    height: 100%; /*ALTURA*/
+    display: flex;  
+    align-items: center; /*ALINHAMENTO VERTICAL*/
+    justify-content: center; /*ALINHAMENTO HORIZONTAL*/
+    text-align: center; /*ALINHAMENTO HORIZONTAL*/
+}
+.logo a{
+    color: white; /*COR*/
+    text-decoration: none;
+    font-size: 40px;
+}
+
+#voltar a{
+    color: aqua;
+    text-decoration: none;
+    font-size: 20px;
+}
+#voltar{
+    padding-right: 30px;
+}
+
+#voltar a:hover{
+    color: white;
+    font-size: 22px;
+    text-decoration: underline;
+}
+
+
+.search-bar{
+    width: 90%; /*LARGURA*/
+    display: flex;
+    padding-left:20px;
+}
+
+ul{
+    list-style-type: none; /*LISTA*/
+    margin: 0; /*MARGEM*/
+    padding: 0; /*PADDING*/
+}
+
+ul li{
+    display: inline; /*EXIBIÇÃO*/
+    margin-right: 20px; /*MARGEM*/
+}
+
+li a{
+    text-decoration: none;
+    color:darkorange;
+    font-size: 30px;
+}
+
+li a:hover{
+    color: white; /*COR*/
+    font-weight: 700;  /* font-size: 35px; */
+}
+
+.header{
+    font-size: 30px;
+    align-items: center; /*ALINHAMENTO VERTICAL*/
+    justify-content: center; /*ALINHAMENTO HORIZONTAL*/
+    text-align: center; /*ALINHAMENTO HORIZONTAL*/
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 3); /*SOMBREAMENTO*/
+    /*HORIZONTAL-VERTICAL-BORRÃO*/
+    font-family: Georgia, 'Times New Roman', Times, serif; /*fonte das letras*/
+    font-weight: 800; /*LARGURA DA FONTE*/
+    color: rgb(153, 153, 153);
+}
+
+img{
+    width: 200px; /*LARGURA*/
+    height: auto; /*ALTURA*/
+}
+
+.container{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 COLUNAS DE TAMANHOS IGUAIS */
+    width: 100%;
+    place-items: center;
+}
+
+.especie{
+    width: 180px;
+    height:180px;
+    background-color:  beige;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px; /*ARREDONDAR A BORDA*/
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.especie img{
+    width: 150px; /*LARGURA MENOR QUE A DIV*/
+    height:150px; /*ALTURA MENOR QUE A DIV*/
+    border-radius: 8px;
+    object-fit: cover; /*OBJECT = OBJETO FIT = AJUSTE  COVER = COBRIR*/
+    /*ESTA FUNÇAO AJUSTA PARA Q A IMG N FIQUE DEFORMADA*/
+}
+
+.especie:hover{
+    transform: scale(1.5); /*TRANSFORME A ESCALA PARA(1.5)*/
+    transition: transform 0.3s ease; /*transiçao da animaçao em 0.3 segundos ease=indica para demorar aqueles segundos*/
+    background-color: azure;
+}
+
