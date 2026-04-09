@@ -91,8 +91,8 @@ def inserir_cliente(connection,nome,email,telefone,sexo,idade): #AQUI ENTRA NOSS
 
     
     
-@app.route('/visualizar')          
 #PRIMEIRO MODO DE MOSTRAR OS CLIENTES
+@app.route('/visualizar')          
 def visualizar():
     # Conecta ao banco
     config = {
@@ -118,22 +118,22 @@ def visualizar():
         connection.close()
 
     # Passa os dados para o template
-    return render_template('dados.html', dados=[colunas] + dados)
+    return render_template('Projetos/templates/dados.html', dados=[colunas] + dados)
 
 
 #CRUD DE MARIA
 #READ
 #SEGUNDO MODO DE MOSTRAR OS CLIENTES
 
-@app.route('/imprimir')
+'''@app.route('/imprimir')
 def imprimir_clientes(connection):
-    '''config = {
-        'host' = os.getenv('DB_HOST'),
-        'port' = int(os.getenv('DB_PORT')),
-        'database' = os.getenv('DB_NAME'),
-        'user' = os.getenv('DB_USER'),
-        'password' = os.getenv('DB_PASSWORD')
-    }'''
+    config = {
+        'host': os.getenv('DB_HOST'),
+        'port': int(os.getenv('DB_PORT')),
+        'database': os.getenv('DB_NAME'),
+        'user': os.getenv('DB_USER'),
+        'password': os.getenv('DB_PASSWORD')
+    }
     try:
         cursor = connection.cursor()
         query = 'SELECT * FROM clientes'
@@ -154,7 +154,7 @@ def imprimir_clientes(connection):
     except Error as e:
         print(f"Erro ao encontrar cliente: {e}")
         connection.rollback()
-        return None
+        return None'''
    
 #UPDATE
 @app.route('/editar')
