@@ -1,0 +1,91 @@
+/*CABEÇALHO*/
+
+header ul{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    list-style-type: none;
+    margin: 0;
+}
+
+header a:hover{
+    color: aquamarine;
+}
+
+header ul li{
+    font-size: 25px;
+}
+
+header{
+    background-image: linear-gradient(to right, rgb(0, 60, 128),rgb(0,0,0));
+    width: 100%;
+    padding: 15px 0px;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+}
+
+/*CORPO*/
+body {
+    color: white;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+#container{
+    padding: 0px ;
+    height: 100dvh;
+}
+
+#center {
+    text-align: center;
+    padding-top: 50px;
+}
+
+#center img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid aquamarine;
+}
+
+h1 {
+    color: aquamarine;
+}
+
+main{
+    display: grid;
+    place-items: center;
+}
+
+section{
+    padding: 0px 50px;
+}
+
+/*RODAPÉ*/
+footer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.elementos img{
+    width: 60px;
+    height: 60px;
+    border-radius: 30%;
+}
+
+.elementos a{
+    margin: 0px;
+    text-align: center;
+}
+
+.elementos p{
+    margin: 0px;
+}
+
